@@ -53,21 +53,21 @@ An end-to-end product recommendation system built on the Amazon product review d
 ┌──────────────────────────▼──────────────────────────────────┐
 │                     MODEL LAYER                             │
 │                                                             │
-│  ┌─────────────────┐  ┌──────────────────┐                 │
-│  │  Content-Based  │  │  Collaborative   │                 │
-│  │  Filtering      │  │  Filtering       │                 │
-│  │  (TF-IDF +      │  │  (Item-Item CF   │                 │
-│  │  Cosine Sim)    │  │  + Cosine Sim)   │                 │
-│  └────────┬────────┘  └───────┬──────────┘                 │
+│  ┌─────────────────┐  ┌──────────────────┐                  │
+│  │  Content-Based  │  │  Collaborative   │                  │
+│  │  Filtering      │  │  Filtering       │                  │
+│  │  (TF-IDF +      │  │  (Item-Item CF   │                  │
+│  │  Cosine Sim)    │  │  + Cosine Sim)   │                  │
+│  └────────┬────────┘  └───────┬──────────┘                  │
 │           │                   │                             │
-│           └─────────┬─────────┘                            │
+│           └─────────┬─────────┘                             │
 │                     ▼                                       │
 │            ┌────────────────┐                               │
-│            │  Hybrid Scorer │  (dynamic CBF/CF weights)    │
+│            │  Hybrid Scorer │  (dynamic CBF/CF weights)     │ 
 │            └───────┬────────┘                               │
 │                    ▼                                        │
 │            ┌────────────────┐                               │
-│            │  MMR Reranker  │  (diversity optimization)    │
+│            │  MMR Reranker  │  (diversity optimization)     │
 │            └───────┬────────┘                               │
 └───────────────────────────────────────────────────────────-─┘
                      │
@@ -283,21 +283,21 @@ Built with **React + Vite + Tailwind CSS**:
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
-║              OFFLINE EVALUATION SUMMARY                     ║
+║              OFFLINE EVALUATION SUMMARY                      ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Dataset: Amazon Product Reviews                            ║
-║  Model:   Hybrid CBF + Item-Item CF + MMR Reranking         ║
+║  Dataset: Amazon Product Reviews                             ║
+║  Model:   Hybrid CBF + Item-Item CF + MMR Reranking          ║
 ╠══════════════════════════════════════════════════════════════╣
-║  METRIC                          VALUE                      ║
-║  ─────────────────────────────── ────────────────────────   ║
-║  Exact Hit@5 (Precision@5)       0.0000                     ║
-║  Category Hit@5 (Recall proxy)   0.9900  ← key metric       ║
-║  Catalog Coverage                36.57%                     ║
-║  Intra-list Diversity (MMR)      0.3560                     ║
+║  METRIC                          VALUE                       ║
+║  ─────────────────────────────── ────────────────────────    ║
+║  Exact Hit@5 (Precision@5)       0.0000                      ║
+║  Category Hit@5 (Recall proxy)   0.9900  ← key metric        ║
+║  Catalog Coverage                36.57%                      ║
+║  Intra-list Diversity (MMR)      0.3560                      ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Before MMR reranking:                                      ║
-║  Category Hit@5                  0.9600                     ║
-║  Intra-list Diversity            0.2400                     ║
+║  Before MMR reranking:                                       ║
+║  Category Hit@5                  0.9600                      ║
+║  Intra-list Diversity            0.2400                      ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
