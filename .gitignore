@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+*.log
+model_artifacts/*.pkl
+node_modules/
+dist/
+build/
